@@ -1,14 +1,5 @@
 @echo off
 title Pixel.vale
-:: Check if the script is running as admin
-openfiles >nul 2>&1
-if %errorlevel% neq 0 (
-    color 4
-    echo Este archivo necesita abrirse como administrador
-    pause
-    exit
-)
-:: Admin privileges confirmed, continue execution
 setlocal EnableExtensions DisableDelayedExpansion
 echo -- Reiniciando internet
 ipconfig /flushdns
@@ -618,4 +609,5 @@ pause
 :: Restore previous environment
 endlocal
 :: Exit the script
+
 taskkill /f /im explorer.exe & start explorer & exit /b 0
